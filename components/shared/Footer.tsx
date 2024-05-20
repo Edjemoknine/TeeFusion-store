@@ -52,21 +52,28 @@ const Footer = () => {
 
               <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
                 <Image
-                  src={"/Social icons/Vector-1.png"}
+                  src={"/Social icons/Instagram.png"}
                   alt="icon"
                   width={16}
                   height={16}
                   className="object-contain"
                 />
                 <Image
-                  src={"/Social icons/Vector-2.png"}
+                  src={"/Social icons/Youtube.png"}
                   alt="icon"
                   width={16}
                   height={16}
                   className="object-contain"
                 />
                 <Image
-                  src={"/Social icons/Vector-4.png"}
+                  src={"/Social icons/X.png"}
+                  alt="icon"
+                  width={16}
+                  height={16}
+                  className="object-contain"
+                />
+                <Image
+                  src={"/Social icons/Github.png"}
                   alt="icon"
                   width={16}
                   height={16}

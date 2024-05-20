@@ -11,7 +11,7 @@ type ProductProps = {
 const ProductCard = ({ product }: ProductProps) => {
   return (
     <div className="group transition-all">
-      <div className="h-[310px] w-[270px] bg-neutral-100 rounded  transition-all duration-300 relative">
+      <div className="h-[310px] w-full bg-neutral-100 rounded  transition-all duration-300 relative">
         <div className="h-full w-full  flex justify-center group-hover:opacity-50 transition-opacity duration-300">
           <Image
             src={product.image}

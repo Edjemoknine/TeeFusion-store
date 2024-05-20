@@ -6,20 +6,120 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 import { FaStar } from "react-icons/fa";
-import { CiShare2, CiHeart } from "react-icons/ci";
+import { CiShare2 } from "react-icons/ci";
+import { Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
 import GridProduct from "@/components/util/Grid";
 import { products } from "@/components/shared/Home/BestSelling";
+import SortSelect from "@/components/util/SortSelect";
+import ReviewCard from "@/components/shared/ReviewCard";
+import { ReviewPopover } from "@/components/util/ReviewPopover";
+import { SharePopover } from "@/components/util/SharePopover";
 const product = {
   id: 1,
   name: "Classic Monochrome Tees ",
   image: "/cover.png",
   price: 100,
   inStock: true,
-  reviews: 54,
+  reviews: [
+    {
+      id: 1,
+      user: {
+        name: "Daniel Smith",
+        avatar: "",
+      },
+      starts: 3,
+      date: "2015-01-01",
+      comment:
+        "This company always goes above and beyond to satisfy their customers.",
+    },
+    {
+      id: 1,
+      user: {
+        name: "Daniel Smith",
+        avatar: "",
+      },
+      starts: 3,
+      date: "2015-01-01",
+      comment:
+        "This company always goes above and beyond to satisfy their customers.",
+    },
+    {
+      id: 1,
+      user: {
+        name: "Daniel Smith",
+        avatar: "",
+      },
+      starts: 3,
+      date: "2015-01-01",
+      comment:
+        "This company always goes above and beyond to satisfy their customers.",
+    },
+    {
+      id: 1,
+      user: {
+        name: "Daniel Smith",
+        avatar: "",
+      },
+      starts: 3,
+      date: "2015-01-01",
+      comment:
+        "This company always goes above and beyond to satisfy their customers.",
+    },
+    {
+      id: 1,
+      user: {
+        name: "Daniel Smith",
+        avatar: "",
+      },
+      starts: 3,
+      date: "2015-01-01",
+      comment:
+        "This company always goes above and beyond to satisfy their customers.",
+    },
+    {
+      id: 1,
+      user: {
+        name: "Daniel Smith",
+        avatar: "",
+      },
+      starts: 3,
+      date: "2015-01-01",
+      comment:
+        "This company always goes above and beyond to satisfy their customers.",
+    },
+    {
+      id: 1,
+      user: {
+        name: "Daniel Smith",
+        avatar: "",
+      },
+      starts: 3,
+      date: "2015-01-01",
+      comment:
+        "This company always goes above and beyond to satisfy their customers.",
+    },
+    {
+      id: 1,
+      user: {
+        name: "Daniel Smith",
+        avatar: "",
+      },
+      starts: 3,
+      date: "2015-01-01",
+      comment:
+        "This company always goes above and beyond to satisfy their customers.",
+    },
+  ],
 };
 const ProductDetails = () => {
   const [details, setDetails] = useState(true);
+  const [sorted, setSorted] = useState("latest");
+  const [reviwesCount, setReviewsCoun] = useState(5);
+  const [liked, setLiked] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(false);
+  const [reviewPopover, setReviewPopover] = useState(false);
+
   const [selected, setSelected] = useState({
     color: "",
     quantity: 1,
@@ -27,9 +127,10 @@ const ProductDetails = () => {
   });
 
   return (
-    <section className="container pt-6 pb-28">
+    <section className="container pt-6 pb-28 relative">
       <BreadCrumb />
-      <div className="grid grid-cols-2 gap-16 h-[570px]">
+      {/* Product details */}
+      <div className="grid md:grid-cols-2 gap-16 min-h-[570px]">
         <div className="bg-neutral-100 rounded flex justify-center items-center">
           <Image
             src={product.image}
@@ -40,18 +141,18 @@ const ProductDetails = () => {
           />
         </div>
         {/* Details Info */}
-        <div className="flex flex-col space-y-6 pt-1">
+        <div className="flex flex-col space-y-6 md:space-y-8 pt-1">
           <div>
             <div className="w-full flex justify-between items-center">
               <h3 className="text-neutral-900 font-bold text-2xl mb-2">
                 {product.name}
               </h3>
-              <CiShare2 size={24} className="text-neutral-500 cursor-pointer" />
+              <SharePopover />
             </div>
             <div className="flex items-center gap-6 ">
               <div className="flex items-center gap-6 rounded-full px-4 py-1.5 text-[10px] text-neutral-500 bg-neutral-100">
                 <FaStar className="text-neutral-500" />
-                <span>4.2--{product.reviews} Reviews</span>
+                <span>4.2--{product.reviews.length} Reviews</span>
               </div>
               <p className="text-gray-500 border text-[10px] rounded-full px-3 py-1 font-medium ">
                 {product.inStock ? "IN STOCK" : "LIMITED"}
@@ -115,9 +216,22 @@ const ProductDetails = () => {
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <Button className="px-20 text-sm w-1/2">Add to cart</Button>
+            <Button
+              onClick={() => setAddedToCart((prev) => !prev)}
+              className={cn(
+                "px-20 text-sm w-1/2",
+                addedToCart && "bg-blue-700"
+              )}
+            >
+              {addedToCart ? "Added" : "Add to cart"}
+            </Button>
             <div className="border border-neutral-100 rounded flex justify-center items-center w-10 h-10">
-              <CiHeart size={20} className=" cursor-pointer " />
+              <Heart
+                fill={liked ? "red" : "white"}
+                onClick={() => setLiked((prev: boolean) => !prev)}
+                size={20}
+                className={cn(" cursor-pointer ")}
+              />
             </div>
           </div>
           <p className="uppercase text-neutral-500 font-medium text-xs">
@@ -125,7 +239,7 @@ const ProductDetails = () => {
           </p>
         </div>
       </div>
-
+      {/* Product Review and description */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-16 pt-28">
         <div className="col-span-1 mt-8 flex md:flex-col gap-6">
           <Button
@@ -167,10 +281,42 @@ const ProductDetails = () => {
           ) : (
             <div className="flex flex-col space-y-6">
               <h4 className="text-neutral-900 font-semibold ">Reviews</h4>
+
+              <p className="flex items-center gap-6">
+                <span className="font-bold text-3xl text-neutral-900">4.2</span>{" "}
+                <span className="text-neutral-400 text-sm">
+                  -- {product.reviews.length} Reveiws
+                </span>
+              </p>
+
+              <ReviewPopover />
+
+              <div>
+                <div className="border-b-2 border-t-neutral-100 pb-2 mb-4 flex justify-end">
+                  <SortSelect sorted={sorted} setSorted={setSorted} />
+                </div>
+                <div className="w-full h-[400px] px-6 overflow-y-auto">
+                  {product.reviews.slice(0, reviwesCount).map((review) => (
+                    <ReviewCard review={review} key={review.id} />
+                  ))}
+                  {/* <div> */}
+                  {product.reviews.length >= reviwesCount && (
+                    <Button
+                      onClick={() => setReviewsCoun((prev) => prev + 5)}
+                      className="w-fit block my-6 mx-auto"
+                    >
+                      Load more reviews
+                    </Button>
+                  )}
+                  {/* </div> */}
+                </div>
+              </div>
             </div>
           )}
         </div>
       </div>
+
+      {/* Similair Products */}
       <div className=" pt-28">
         <h4 className="text-neutral-900 font-bold text-2xl">
           You might also like

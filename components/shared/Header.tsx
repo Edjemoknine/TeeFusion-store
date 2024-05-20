@@ -1,17 +1,16 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Search";
 import { PiShoppingCart } from "react-icons/pi";
 import { FaRegCircleUser } from "react-icons/fa6";
-const links = [
-  { label: "Home", href: "/" },
-  { label: "Categories", href: "/categories" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+import Navigation from "./nav";
+import { Menu } from "lucide-react";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
+  const [open, setOpen] = useState(true);
   return (
     <nav className="container ">
       <div className=" border-b border-neutral-100 py-5 flex items-center justify-between">
@@ -27,12 +26,8 @@ const Header = () => {
             Ecommerce
           </span>
         </div>
-        <div className="flex space-x-8 text-sm">
-          {links.map((link) => (
-            <Link href={link.href} key={link.label}>
-              {link.label}
-            </Link>
-          ))}
+        <div className="hidden md:block">
+          <Navigation />
         </div>
         <div className="flex gap-8 items-center">
           <Search />
@@ -42,6 +37,11 @@ const Header = () => {
           <Link href={"/profile"}>
             <FaRegCircleUser size={18} />
           </Link>
+          <Menu
+            onClick={() => setOpen((prev) => !prev)}
+            className="md:hidden flex cursor-pointer"
+          />
+          <MobileNav openNav={open} setOpenNav={setOpen} />
         </div>
       </div>
     </nav>
