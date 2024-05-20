@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="container">
-        <div className="pt-20">
+        <div className="pt-28 ">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
               <div className="flex items-center gap-4 ">
@@ -77,12 +77,12 @@ const Footer = () => {
 
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 ">
               <div className="text-center sm:text-left">
-                <p className=" font-medium text-gray-900">Support</p>
+                <p className="text-sm text-neutral-400 font-medium ">Support</p>
 
                 <ul className="mt-8 space-y-4 text-sm">
                   <li>
                     <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-neutral-500 transition hover:text-neutral-500/75 "
                       href="#"
                     >
                       FAQ
@@ -91,7 +91,7 @@ const Footer = () => {
 
                   <li>
                     <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-neutral-500 transition hover:text-neutral-500/75 "
                       href="#"
                     >
                       Terms of use
@@ -100,7 +100,7 @@ const Footer = () => {
 
                   <li>
                     <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-neutral-500 transition hover:text-neutral-500/75 "
                       href="#"
                     >
                       Privacy Policy
@@ -110,12 +110,12 @@ const Footer = () => {
               </div>
 
               <div className="text-center sm:text-left">
-                <p className=" font-medium text-gray-900">Company</p>
+                <p className=" text-sm text-neutral-400 font-medium">Company</p>
 
                 <ul className="mt-8 space-y-4 text-sm">
                   <li>
                     <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-neutral-500 transition hover:text-neutral-500/75 "
                       href="#"
                     >
                       About us
@@ -124,7 +124,7 @@ const Footer = () => {
 
                   <li>
                     <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-neutral-500 transition hover:text-neutral-500/75 "
                       href="#"
                     >
                       {" "}
@@ -134,7 +134,7 @@ const Footer = () => {
 
                   <li>
                     <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-neutral-500 transition hover:text-neutral-500/75 "
                       href="#"
                     >
                       {" "}
@@ -145,12 +145,12 @@ const Footer = () => {
               </div>
 
               <div className="text-center sm:text-left">
-                <p className=" font-medium text-gray-900">SHOP</p>
+                <p className=" text-sm text-neutral-400 font-medium">SHOP</p>
 
                 <ul className="mt-8 space-y-4 text-sm">
                   <li>
                     <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-neutral-500 transition hover:text-neutral-500/75 "
                       href="#"
                     >
                       {" "}
@@ -160,7 +160,7 @@ const Footer = () => {
 
                   <li>
                     <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-neutral-500 transition hover:text-neutral-500/75 "
                       href="#"
                     >
                       {" "}
@@ -169,7 +169,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-neutral-500 transition hover:text-neutral-500/75 "
                       href="#"
                     >
                       {" "}
@@ -180,7 +180,9 @@ const Footer = () => {
               </div>
             </div>
             <div className="text-center ">
-              <p className=" font-medium text-gray-900">ACCEPTED PAYMENTS</p>
+              <p className=" text-sm text-neutral-400 font-medium">
+                ACCEPTED PAYMENTS
+              </p>
 
               <div className="flex justify-center gap-8 items-center">
                 <Image
@@ -207,7 +209,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <p className="text-center pb-6 text-neutral-500 text-sm pt-16">
+          <p className="text-center pb-6 text-neutral-500 text-sm pt-24">
             © 2024 Ecommerce. All rights reserved. Created by Moknine
           </p>
         </div>

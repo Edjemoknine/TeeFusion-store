@@ -13,8 +13,8 @@ const links = [
 
 const Header = () => {
   return (
-    <nav className="container">
-      <div className=" py-5 flex items-center justify-between">
+    <nav className="container ">
+      <div className=" border-b border-neutral-100 py-5 flex items-center justify-between">
         <div className="flex items-center gap-4 ">
           <Image
             src={"/Logo/logolight.png"}

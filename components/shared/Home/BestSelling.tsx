@@ -3,7 +3,8 @@ import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Image from "next/image";
-const products = [
+import GridProduct from "@/components/util/Grid";
+export const products = [
   {
     id: 1,
     name: "Classic Monochrome Tees ",
@@ -45,11 +46,7 @@ const BestSelling = () => {
             Best Selling
           </h2>
         </div>
-        <div className="grid grid-cols-4 gap-6">
-          {products.map((product) => {
-            return <ProductCard product={product} key={product.id} />;
-          })}
-        </div>
+        <GridProduct products={products} />
       </div>
       <div className="h-[304px] bg-gradient-to-r from-neutral-100 my-28">
         <div className="container flex justify-between">
@@ -85,11 +82,7 @@ const BestSelling = () => {
             Latest
           </span>
         </div>
-        <div className="grid grid-cols-4 gap-6">
-          {products.map((product) => {
-            return <ProductCard product={product} key={product.id} />;
-          })}
-        </div>
+        <GridProduct products={products} />
       </div>
     </>
   );
