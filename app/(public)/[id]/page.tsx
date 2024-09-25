@@ -128,7 +128,6 @@ const ProductDetails = () => {
 
   return (
     <section className="container pt-6 pb-28 relative">
-      <BreadCrumb />
       {/* Product details */}
       <div className="grid md:grid-cols-2 gap-16 min-h-[570px]">
         <div className="bg-neutral-100 rounded flex justify-center items-center">

@@ -7,8 +7,8 @@ import { TbTruck } from "react-icons/tb";
 import { LiaCertificateSolid } from "react-icons/lia";
 const Hero = () => {
   return (
-    <>
-      <section className=" bg-neutral-100 h-[440px] overflow-hidden">
+    <div className="min-h-[calc(100vh-100px)] h-full ">
+      <section className=" bg-neutral-100 h-[calc(100vh-100px)] overflow-hidden">
         <div className="container grid md:grid-cols-2 h-full">
           <div className="flex-col flex space-y-8 justify-center items-start  h-full">
             {" "}
@@ -26,21 +26,21 @@ const Hero = () => {
             <Image
               src={"/Ellipse.png"}
               alt="ellipse"
-              width={400}
-              height={400}
+              width={1000}
+              height={1000}
               className="object-contain absolute bottom-0"
             />
             <Image
               src={"/Hero.png"}
               alt="Hero"
               className="object-contain z-30 absolute bottom-0 "
-              width={255}
-              height={382}
+              width={400}
+              height={482}
             />
           </div>
         </div>
       </section>
-      <div className="container grid md:grid-cols-3 sm:grid-cols-2 gap-10 mt-24">
+      <div className="container grid md:grid-cols-3 sm:grid-cols-2 gap-10 mt-10">
         <div className=" space-y-4 ">
           <div className="size-[48px] bg-neutral-100 rounded-full flex justify-center items-center">
             <TbTruck size={20} className="" />
@@ -72,7 +72,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

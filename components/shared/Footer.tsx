@@ -41,7 +41,7 @@ const Footer = () => {
                   height={40}
                 />
                 <span className="text-[20px] font-extrabold text-neutral-900 ">
-                  Ecommerce
+                  TeeFusion
                 </span>
               </div>
 

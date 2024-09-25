@@ -8,7 +8,7 @@ const links = [
 ];
 const Navigation = () => {
   return (
-    <div className="flex items-center flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 text-sm">
+    <div className="flex  items-center flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 text-sm">
       {links.map((link) => (
         <Link href={link.href} key={link.label}>
           {link.label}
